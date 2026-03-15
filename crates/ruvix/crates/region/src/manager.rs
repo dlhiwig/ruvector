@@ -11,7 +11,10 @@ extern crate alloc;
 use alloc::boxed::Box;
 use alloc::vec::Vec;
 use crate::append_only::AppendOnlyRegion;
+#[cfg(feature = "std")]
 use crate::backing::HeapBacking;
+#[cfg(not(feature = "std"))]
+use crate::backing::StaticBacking;
 use crate::immutable::ImmutableRegion;
 use crate::slab::{SlabRegion, SlotHandle};
 use crate::Result;

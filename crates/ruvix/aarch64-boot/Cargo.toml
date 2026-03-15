@@ -6,8 +6,14 @@ authors = ["SuperClaw Contributors"]
 
 [workspace]
 
-# Minimal deps — just bare metal, no std, no alloc for first boot
+# Minimal deps — just bare metal + capability system
 [dependencies]
+ruvix-types = { path = "../crates/types", default-features = false }
+ruvix-cap = { path = "../crates/cap", default-features = false, features = ["alloc"] }
+ruvix-shell = { path = "../crates/shell", default-features = false }
+
+[build-dependencies]
+vergen = { version = "8", default-features = false, features = ["build", "git", "gitcl"] }
 
 [[bin]]
 name = "ruvix-kernel"

@@ -15,8 +15,8 @@ readme = "README.md"
 crate-type = ["rlib"]
 
 [dependencies]
-ruvix-types = { version = "0.1.0", path = "../types" }
-ruvix-region = { version = "0.1.0", path = "../region" }
+ruvix-types = { version = "0.1.0", path = "../types", default-features = false }
+ruvix-region = { version = "0.1.0", path = "../region", default-features = false }
 
 [dev-dependencies]
 proptest = { workspace = true }

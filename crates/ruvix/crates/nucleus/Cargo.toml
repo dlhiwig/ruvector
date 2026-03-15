@@ -16,10 +16,10 @@ crate-type = ["rlib"]
 
 [dependencies]
 # All RuVix subsystem crates
-ruvix-types = { version = "0.1.0", path = "../types" }
-ruvix-region = { version = "0.1.0", path = "../region" }
-ruvix-cap = { version = "0.1.0", path = "../cap" }
-ruvix-queue = { version = "0.1.0", path = "../queue" }
+ruvix-types = { version = "0.1.0", path = "../types", default-features = false }
+ruvix-region = { version = "0.1.0", path = "../region", default-features = false }
+ruvix-cap = { version = "0.1.0", path = "../cap", default-features = false }
+ruvix-queue = { version = "0.1.0", path = "../queue", default-features = false }
 
 # Shell integration (optional)
 ruvix-shell = { version = "0.1.0", path = "../shell", optional = true }

@@ -4,7 +4,7 @@ target = "aarch64-unknown-none"
 [target.aarch64-unknown-none]
 linker = "rust-lld"
 runner = "qemu-system-aarch64 -machine virt -cpu cortex-a72 -nographic -kernel"
-rustflags = []
+rustflags = ["-C", "link-arg=-Tlinker.ld"]
 
 [unstable]
 build-std = ["core", "alloc"]

@@ -1,0 +1,15 @@
+[package]
+name = "vecgraph_demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ruvix-vecgraph = { path = "../../crates/vecgraph", features = ["std", "stats"] }
+ruvix-types = { path = "../../crates/types", features = ["std"] }
+ruvix-region = { path = "../../crates/region", features = ["std"] }
+ruvix-proof = { path = "../../crates/proof", features = ["std"] }
+rand = "0.8"
+
+[[bin]]
+name = "vecgraph_demo"
+path = "src/main.rs"

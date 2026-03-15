@@ -1,4 +1,14 @@
+use vergen::EmitBuilder;
+
 fn main() {
-    println!("cargo:rerun-if-changed=linker.ld");
-    println!("cargo:rustc-link-arg=-Tlinker.ld");
+    // Generate build timestamp
+    EmitBuilder::builder()
+        .all_build()
+        .all_git()
+        .emit()
+        .unwrap_or_else(|_| {
+            // Fallback if git is not available
+            println!("cargo:rustc-env=VERGEN_BUILD_TIMESTAMP=unknown");
+            println!("cargo:rustc-env=VERGEN_GIT_SHA=unknown");
+        });
 }
