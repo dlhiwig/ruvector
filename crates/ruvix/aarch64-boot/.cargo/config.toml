@@ -1,9 +1,10 @@
 [build]
-target = "aarch64-ruvix.json"
+target = "aarch64-unknown-none"
 
-[target.aarch64-ruvix]
+[target.aarch64-unknown-none]
 linker = "rust-lld"
 runner = "qemu-system-aarch64 -machine virt -cpu cortex-a72 -nographic -kernel"
+rustflags = []
 
 [unstable]
 build-std = ["core", "alloc"]

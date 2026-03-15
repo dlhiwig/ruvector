@@ -1,0 +1,23 @@
+[package]
+name = "ruvix-kernel"
+version = "0.1.0"
+edition = "2021"
+authors = ["SuperClaw Contributors"]
+
+[workspace]
+
+# Minimal deps — just bare metal, no std, no alloc for first boot
+[dependencies]
+
+[[bin]]
+name = "ruvix-kernel"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = "s"
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
